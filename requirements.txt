@@ -15,7 +15,5 @@ python-dotenv==1.1.1
 reportlab==4.4.4
 sentence_transformers==5.1.1
 streamlit==1.50.0
-streamlit==1.42.0
 transformers==4.55.4
-transformers==4.29.2
 typing_extensions==4.15.0
