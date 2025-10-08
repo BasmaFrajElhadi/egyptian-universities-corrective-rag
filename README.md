@@ -169,3 +169,13 @@ streamlit run app.py
 
 This project is licensed under the **MIT License** — you’re free to use, modify, and distribute it with attribution.
 
+
+---
+
+## 🌐 Live Demo
+
+The **Egyptian Universities Corrective RAG App** is publicly accessible online:
+[🔗 Open Streamlit App](https://egyptian-universities-corrective-rag.streamlit.app/)
+
+You can click the link to test the Q&A system in real time.
+
