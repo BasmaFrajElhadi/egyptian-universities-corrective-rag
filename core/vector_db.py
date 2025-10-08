@@ -4,8 +4,10 @@ import json
 import chromadb
 from langchain.schema import Document
 # Add project root to sys.path for relative imports
-project_root = os.path.abspath(os.path.join(os.getcwd(), "../"))
-sys.path.append(project_root)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
 from core.text_embedder import TextEmbedder
 
 class VectorDB:

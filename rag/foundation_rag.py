@@ -5,8 +5,9 @@ from dotenv import load_dotenv
 from langsmith.run_helpers import traceable
 
 # --- Project path setup ---
-project_root = os.path.abspath(os.path.join(os.getcwd(), "../"))
-sys.path.append(project_root)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_root not in sys.path:
+    sys.path.append(project_root)
 
 from states.conversation_state import ConversationState
 from core.vector_db import VectorDB

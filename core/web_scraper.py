@@ -5,9 +5,9 @@ import json
 from playwright.sync_api import sync_playwright, Page
 
 # Add project root to sys.path for relative imports
-project_root = os.path.abspath(os.path.join(os.getcwd(), "../"))
-sys.path.append(project_root)
-
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_root not in sys.path:
+    sys.path.append(project_root)
 
 class WebScraper:
     """

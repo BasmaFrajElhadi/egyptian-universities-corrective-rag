@@ -1,10 +1,10 @@
 import sys
 import os
 import streamlit as st
-
 # --- Project path setup ---
-project_root = os.path.abspath(os.path.join(os.getcwd(), ".."))
-sys.path.append(project_root)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_root not in sys.path:
+    sys.path.append(project_root)
 
 from rag.corrective_rag import CorrectiveRAG
 from core.vector_db import VectorDB
@@ -141,7 +141,12 @@ if validate_gemini_key and validate_groq_key:
         if agent_metadata:
 
             full_file_path = ui_component.get_pdf_path(agent_metadata['university_name'][0])
-            st.pdf(full_file_path, height=700)
+            # st.pdf(full_file_path, height=700)
+            
+            try:
+                st.pdf(full_file_path, height=700)
+            except Exception as e:
+                pass
 
         st.session_state.messages.append({"role": "assistant", "content": response})
         store.add_ai_message(session_id, response,agent_metadata)

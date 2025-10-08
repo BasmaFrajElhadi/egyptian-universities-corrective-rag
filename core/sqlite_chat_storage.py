@@ -7,8 +7,10 @@ import random
 from datetime import datetime
 from typing import List, Dict, Optional, Any
 
-project_root = os.path.abspath(os.path.join(os.getcwd(), "../"))
-sys.path.append(project_root)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
 from models.keyword_summarizer import KeywordSummarizer
 from core.text_preprocessor import TextProcessor
 
